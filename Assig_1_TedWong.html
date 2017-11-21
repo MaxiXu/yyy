@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<!--
+Need to learn how to:
+1. center button
+2. left- and right- justify content within the same line
+3. insert some blank lines
+4. center JS output message
+5. print multiple lines in JS  (solved)
+-->
+<head>
+<title>Assignment 1</title>
+</head>
+<body bgcolor="yellow">
+<!-- Assigment - Fortune Teller -->
+<p align="right">Assignment 1 - Ted Wong</p>
+<h1>Welcome to QCC Fortune Teller</h1>
+<!-- learn to use the button event -->
+<button type="button" onclick="Clicked()">Click here for your fortune!</button>
+<p id="writehere"><em>(Your fortune will be told here)</em></p>
+<!-- use javascript to print out the fortune -->
+<script>
+function Clicked()
+{
+//define all the variables
+ var n_child;
+ var p_name;
+ var g_location;
+ var j_title;
+ var mess;
+//assign values to the variables
+ n_child= 2;
+ p_name="Chris";
+ g_location="Chicago, IL";
+ j_title = "Web Designer";
+/*
+assemble message and value together into variable mess
+*/
+ mess="<p>Your spouse's name is "+p_name;
+ mess=mess+" and you will have "+n_child+" children together. </p>";
+ mess=mess+"You will become a "+j_title;
+ mess=mess+" and settle down in "+g_location+".";
+ document.getElementById("writehere").innerHTML=mess;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+-->
+<head>
+	<title>QCC Book Club</title>
+</head>
+<body>
+<p align="right">ET710 Assignment 2 - Ted Wong</p>
+<p align="right">Sep 12, 2017</p>
+<h2>Membership Application</h2>
+	<form name="membership" id="mid">
+
+		<label>First Name: <input type="text" name="fname" size="30" maxlength="30" required></label><br />
+		<label>Last Name: <input type="text" name="lname" size="30" maxlength="30" required></label><br />
+		<label>Email: &nbsp &nbsp &nbsp &nbsp<input type="email" name="email" size="30" maxlength="100" required></label><br />
+		<p>
+		<label>Where do you live?</label><br />
+			<select name="where">
+				<option value="Queens">Queens</option>
+				<option value="Brooklyn">Brooklyn</option>
+				<option value="Manhattan">Manhattan</option>
+				<option value="Bronx">Bronx</option>
+				<option value="StatenIsland">Staten Island</option>
+				<option value="Other">Other</option>
+			</select>
+		</p>
+		<p>
+		Would you like to receive our newsletter?<br />
+		<label><input type="radio" name="NL" id="NL" value="yes" > Yes</label>
+		<label><input type="radio" name="NL" id="NL" value="no" > No</label>
+		</p>
+		<p>
+		Favorite type of reading<br />
+		<label><input type="checkbox" name="fiction"  checked="checked" > Fiction</label>
+		<label><input type="checkbox" name="history" > History</label>
+		<label><input type="checkbox" name="poetry" > Poetry</label>
+		<label><input type="checkbox" name="scifi" > Sci-Fi</label>
+		</p>
+		<p>
+		<label for="comment">Comments:</label><br />
+		<textarea rows="5" cols="50" id="comment"></textarea>
+		</p>
+        <button type="button" onclick="Clicked()">Submit</button>
+ </form>
+<p id="writehere"></p>
+<!-- use javascript to print out the fortune -->
+<script language="javascript">
+
+function Clicked()
+{
+var mform=document.forms["mid"];
+		var fname=mform.elements["fname"].value;
+		var lname=mform.elements["lname"].value;
+		var email=mform.elements["email"].value;
+		var where=mform.elements["where"].value;
+		var nl=mform.elements["NL"];
+		var nlv;
+		var fiction=mform.elements["fiction"];
+		var fc;
+		var history=mform.elements["history"];
+		var hc;
+		var poetry=mform.elements["poetry"];
+		var pc;
+		var scifi=mform.elements["scifi"];
+		var sc;
+		var comment=mform.elements["comment"].value;
+		var mess;
+		
+		if (nl[0].checked)
+		{
+		nlv="yes to newsletter";
+		}
+		else
+		{
+		nlv="no to newsletter";
+		}
+		
+		if (fiction.checked == true)
+		{
+		fc="fiction checked";
+		}
+		else
+		{
+		fc="fiction not checked";
+		}
+		
+		if (history.checked == true)
+		{
+		hc="history checked";
+		}
+		else
+		{
+		hc="history not checked";
+		}
+		
+		if (poetry.checked == true)
+		{
+		pc="poetry checked";
+		}
+		else
+		{
+		pc="poetry not checked";
+		}
+		
+		if (scifi.checked == true)
+		{
+		sc="scifi checked";
+		}
+		else
+		{
+		sc="scifi not checked";
+		}		
+
+		
+  mess="this is a test "+fname;
+ document.getElementById("writehere").innerHTML=mess;
+}
+		
+		</script>
+</body>
+</html>

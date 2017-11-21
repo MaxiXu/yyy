@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<!--
+Need to learn how to:
+1. why required does not work
+2. set answer to a different color
+3. line up input box with table??
+-->
+<head>
+<title>Assignment 1</title>
+</head>
+<body bgcolor="yellow">
+  <center>
+<!-- Assigment - Fortune Teller -->
+<p align="right">Assignment 1 Extra Credit - Ted Wong</p>
+<p align="right">Sep 7, 2017</p>
+<h1>Welcome to QCC Fortune Teller</h1>
+<!-- learn to use the button event -->
+<fieldset>
+  <legend>
+    Please answer the following:
+  </legend>
+  <label>
+    Spouse's Name:
+    <input type="text"  id="name" size="30" required>
+  </label><br />
+  <label>
+    # of Children: &nbsp &nbsp
+    <input type="text"  id="child" size="30" required>
+  </label><br />
+  <label>
+    Location: &nbsp &nbsp &nbsp &nbsp &nbsp
+    <input type="text"  id="where" size="30" required>
+  </label><br />
+  <label>
+    Occupation: &nbsp &nbsp &nbsp
+    <input type="text"  id="job" size="30" required>
+  </label><br />
+</fieldset>
+<br />
+<button type="button" onclick="Clicked()">Click here for your fortune!</button>
+<p id="writehere"><em>(Your fortune will be told here)</em></p>
+<!-- use javascript to print out the fortune -->
+<script>
+function Clicked()
+{
+//define all the variables
+ var n_child;
+ var p_name;
+ var g_location;
+ var j_title;
+ var mess;
+//assign values to the variables
+
+ p_name = document.getElementById("name").value;
+ n_child = document.getElementById("child").value;
+ g_location = document.getElementById("where").value;
+ j_title = document.getElementById("job").value;
+ console.group('all data');
+   console.info("name", p_name);
+   console.info("# child", n_child);
+ console.groupEnd();
+ 
+/*
+assemble message and value together into variable mess
+*/
+ mess="<p>Your spouse's name is <strong><em><font color='red'>"+p_name;
+ mess=mess+"</font></em></strong> and you will have <strong><em><font color='red'>"+n_child+"</font></em></strong> children together. </p>";
+ mess=mess+"You will become a <strong><em><font color='red'>"+j_title;
+ mess=mess+"</font></em></strong> and settle down in <strong><em><font color='red'>"+g_location+"</font></em></strong>.";
+ document.getElementById("writehere").innerHTML=mess;
+}
+</script>
+</center>
+</body>
+</html>
